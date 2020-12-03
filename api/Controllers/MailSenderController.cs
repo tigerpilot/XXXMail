@@ -22,7 +22,7 @@ namespace api.Controllers
             _mapper = mapper;
         }
 
-        [HttpGet]
+        [HttpPost]
         [Route("msend")]
         public async Task<IActionResult> MailSender(string toAdress,string toName,string subject,string title,string subtitle){
 
