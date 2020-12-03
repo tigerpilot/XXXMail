@@ -1,0 +1,8 @@
+{
+  "runtimeOptions": {
+    "additionalProbingPaths": [
+      "C:\\Users\\DostTech\\.dotnet\\store\\|arch|\\|tfm|",
+      "C:\\Users\\DostTech\\.nuget\\packages"
+    ]
+  }
+}
