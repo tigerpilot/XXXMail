@@ -5,6 +5,7 @@ using api.Data;
 using AutoMapper;
 using api.ViewModel;
 using System.Linq;
+using Microsoft.AspNetCore.Cors;
 
 namespace api.Controllers
 {
@@ -22,6 +23,7 @@ namespace api.Controllers
             _mapper = mapper;
         }
 
+        [EnableCors("Policy1")]
         [HttpPost]
         [Route("msend")]
         public async Task<IActionResult> MailSender(SendingDataViewModel model){
@@ -37,7 +39,7 @@ namespace api.Controllers
                     Subtitle = model.SubTitle
                 });
             
-            return Ok("mail sender works");
+            return Ok();
         }
     }
 }

@@ -15,6 +15,7 @@ using api.Services;
 using Microsoft.EntityFrameworkCore;
 using api.Data;
 using AutoMapper;
+using Microsoft.AspNetCore.Cors;
 
 namespace api
 {
@@ -33,10 +34,21 @@ namespace api
             services.AddAutoMapper(typeof(Startup));
 
             services.Configure<Mail>(Configuration.GetSection("mail"));
-            services.AddTransient<IMailer,Mailer>();
+            services.AddTransient<IMailer, Mailer>();
 
             services.AddDbContext<XxxDbContext>(options =>
             options.UseSqlServer(Configuration.GetConnectionString("Default")));
+            services.AddCors(options =>
+   {
+       options.AddPolicy("Policy1",
+           builder =>
+           {
+               builder.WithOrigins("http://localhost:4200",
+                                   "http://www.contoso.com")
+                                   .AllowAnyHeader()
+                                   .AllowAnyMethod();
+           });
+   });
 
             services.AddControllers();
             services.AddSwaggerGen(c =>
@@ -55,9 +67,12 @@ namespace api
                 app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "api v1"));
             }
 
+
             app.UseHttpsRedirection();
 
             app.UseRouting();
+
+            app.UseCors();
 
             app.UseAuthorization();
 
