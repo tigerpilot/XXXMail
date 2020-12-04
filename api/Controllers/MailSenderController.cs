@@ -24,17 +24,17 @@ namespace api.Controllers
 
         [HttpPost]
         [Route("msend")]
-        public async Task<IActionResult> MailSender(string toAdress,string toName,string subject,string title,string subtitle){
+        public async Task<IActionResult> MailSender(SendingDataViewModel model){
 
             var posts = _context.Mails.ToList();
 
             var post = _mapper.Map<Mail,MailViewModel>(posts[0]);
 
-            await  _mailer.Send(toAdress, toName, post.TemplateId, new
+            await  _mailer.Send(model.ToMailAdr, model.ToName, post.TemplateId, new
                 {
-                    Subject = subject,
-                    Title = title,
-                    Subtitle = subtitle
+                    Subject = model.Subject,
+                    Title = model.Title,
+                    Subtitle = model.SubTitle
                 });
             
             return Ok("mail sender works");
