@@ -24,7 +24,9 @@ export class AppComponent {
       setTimeout(() => window.location.reload(), 4000);
       
     },error=>{
-      console.log("error")
+      this._snackBar.open("Xəta baş verdi", "Uğursuz", {
+        duration: 4000,
+      });
     })
 
     console.log(JSON.stringify(dataForm));
