@@ -1,27 +1,31 @@
 <div class="container">
     <br>
-    <form #dataForm='ngForm' (ngSubmit)="sendMail(dataForm.value)">
-        <div class="form-group">
-            <label for="exampleFormControlInput1">Email address</label>
-            <input for="ToMailAdr" name="ToMailAdr" type="email" ngModel class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
-        </div>
-        <div class="form-group">
-            <label for="exampleFormControlInput1">ad</label>
-            <input for="ToName" name="ToName" type="text" class="form-control" ngModel id="exampleFormControlInput1" placeholder="name@example.com">
-        </div>
-        <div class="form-group">
-            <label for="exampleFormControlInput1">subject</label>
-            <input for="Subject" name="Subject" type="text" class="form-control" ngModel id="exampleFormControlInput1" placeholder="name@example.com">
-        </div>
-        <div class="form-group">
-            <label for="exampleFormControlInput1">title</label>
-            <input for="Title" name="Title" type="text" class="form-control" ngModel id="exampleFormControlInput1" placeholder="name@example.com">
-        </div>
-        <div class="form-group">
-            <label for="exampleFormControlTextarea1">subtitle</label>
-            <textarea for="SubTitle" name="SubTitle" class="form-control" ngModel id="exampleFormControlTextarea1" rows="3"></textarea>
-        </div>
+    <div class="row" style="justify-content: center;">
+        <div class="col-md-7">
+            <form class="mt-4" #dataForm='ngForm' (ngSubmit)="sendMail(dataForm.value)">
+                <div class="form-group">
+                    <label for="exampleFormControlInput1">Email addresi</label>
+                    <input for="ToMailAdr" name="ToMailAdr" type="email" ngModel class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+                </div>
+                <div class="form-group">
+                    <label for="exampleFormControlInput1">Ad</label>
+                    <input for="ToName" name="ToName" type="text" class="form-control" ngModel id="exampleFormControlInput1" placeholder="name@example.com">
+                </div>
+                <div class="form-group">
+                    <label for="exampleFormControlInput1">Subyekt</label>
+                    <input for="Subject" name="Subject" type="text" class="form-control" ngModel id="exampleFormControlInput1" placeholder="name@example.com">
+                </div>
+                <div class="form-group">
+                    <label for="exampleFormControlInput1">Başlıq</label>
+                    <input for="Title" name="Title" type="text" class="form-control" ngModel id="exampleFormControlInput1" placeholder="name@example.com">
+                </div>
+                <div class="form-group">
+                    <label for="exampleFormControlTextarea1">Mətn</label>
+                    <textarea for="SubTitle" name="SubTitle" class="form-control" ngModel id="exampleFormControlTextarea1" rows="3"></textarea>
+                </div>
 
-        <button class="btn btn-primary" type="submit">submit</button>
-    </form>
+                <button class="btn btn-primary" type="submit">Göndər</button>
+            </form>
+        </div>
+    </div>
 </div>

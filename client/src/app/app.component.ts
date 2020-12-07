@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
-import { NgForm } from '@angular/forms';
+import { FormGroup, NgForm } from '@angular/forms';
 import {MailsenderService} from './mailsender.service';
+import {MatSnackBar} from '@angular/material/snack-bar'
 
 @Component({
   selector: 'app-root',
@@ -10,12 +11,18 @@ import {MailsenderService} from './mailsender.service';
 export class AppComponent {
   title = 'client';
 
-  constructor(private mailService:MailsenderService){}
+  constructor(private mailService:MailsenderService,private _snackBar: MatSnackBar){}
 
 
   sendMail(dataForm:NgForm){
 
     this.mailService.sendMail(JSON.stringify(dataForm)).subscribe(data=>{
+      this._snackBar.open("Mesajınız göndərildi", "Uğurlu", {
+        duration: 4000,
+      });
+
+      setTimeout(() => window.location.reload(), 4000);
+      
     },error=>{
       console.log("error")
     })

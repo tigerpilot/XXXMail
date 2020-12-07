@@ -1,0 +1,29 @@
+form {
+    -webkit-box-shadow: 1px 0px 10px 0px rgba(50, 50, 50, 0.75);
+    -moz-box-shadow: 1px 0px 10px 0px rgba(50, 50, 50, 0.75);
+    box-shadow: 1px 0px 10px 0px rgba(50, 50, 50, 0.75);
+    padding: 25px;
+    border-radius: 10px;
+    background: rgb(64, 99, 78);
+    background: linear-gradient(74deg, rgba(64, 99, 78, 0.9192051820728291) 37%, rgba(87, 121, 102, 1) 66%, rgba(73, 113, 95, 0.9220063025210083) 88%);
+}
+
+input {
+    background-color: #ced4da !important;
+    border: 1px dotted #ced4da !important;
+}
+
+textarea {
+    background-color: #ced4da !important;
+    border: 1px dotted #ced4da !important;
+}
+
+button {
+    background-color: #ced4da;
+    color: black;
+    border: 1px dotted black !important;
+}
+
+label {
+    color: wheat !important;
+}
